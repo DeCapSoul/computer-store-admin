@@ -36,7 +36,14 @@ Route::namespace('Api')->group(function() {
 
         Route::get('roles/{role}/permissions', 'RoleController@permissions')->middleware('permission:' . Acl::PERMISSION_PERMISSION_MANAGE);
         Route::get('requests', 'RequestController@index');
+
+        //Product routes
+        Route::apiResource('products', 'ProductController');
     });
+    // No Auth routes
+    Route::get('products', 'ProductController@index');
+    Route::get('products/{product}', 'ProductController@show');
+
 });
 
 Route::get('/orders', function () {

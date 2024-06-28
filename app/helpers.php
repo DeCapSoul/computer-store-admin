@@ -14,7 +14,7 @@ if (!function_exists('responseSuccess')) {
      * @param array $other
      * @return JsonResponse
      */
-    function responseSuccess($data = [], $msg = '操作成功', $other = []): JsonResponse
+    function responseSuccess($data = [], $msg = 'Successfully', $other = []): JsonResponse
     {
         $res = [
             'message' => $msg,
